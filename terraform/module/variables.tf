@@ -1,7 +1,3 @@
-variable bucket {
-  default = "mds-mai"
-}
-
 variable public_key_path {
 }
 
