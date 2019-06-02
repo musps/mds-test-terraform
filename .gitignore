@@ -4,3 +4,4 @@ terraform.tfstate*
 *.tfstate
 errored.tfstate
 *.tfvars
+terraform/main.tf
