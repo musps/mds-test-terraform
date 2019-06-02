@@ -1,0 +1,13 @@
+provider "aws" {
+  region = "eu-central-1"
+  version = "~> 2.11.0"
+}
+
+module "default" {
+  source = "./module"
+
+  db_password       = ""
+  ami_id            = ""
+  public_key_path   = ""
+  private_key_path  = ""
+}

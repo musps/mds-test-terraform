@@ -2,11 +2,10 @@ variable bucket {
   default = "mds-mai"
 }
 
-variable region {
-  default = "eu-central-1"
+variable public_key_path {
 }
 
-variable public_key_path {
+variable private_key_path {
 }
 
 variable ami_id {
@@ -14,6 +13,10 @@ variable ami_id {
 
 variable ssh_user {
   default = "ubuntu"
+}
+
+variable app_port {
+  default = 8080
 }
 
 variable db_name {
@@ -31,3 +34,14 @@ variable db_port {
   default = 5432
 }
 
+variable cird_block_main {
+  default = "172.2.0.0/16"
+}
+
+variable cird_block_bastion {
+  default = "172.2.2.0/24"
+}
+
+variable cird_block_ursho {
+  default = "172.2.1.0/24"
+}

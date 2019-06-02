@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ######################################
-# STEP 1 : Create config file.
+# STEP 1 : Create config file.       #
 ######################################
 mkdir /bin/config
 
@@ -9,10 +9,10 @@ cat <<"__EOF__" > /bin/config/config.json
 {
   "server": {
     "host": "0.0.0.0",
-    "port": "8080"
+    "port": "${app_port}"
   },
   "options": {
-    "prefix": "http://localhost:8080/"
+    "prefix": "Generated url : /"
   },
   "postgres": {
     "host": "${db_host}",
@@ -25,7 +25,7 @@ cat <<"__EOF__" > /bin/config/config.json
 __EOF__
 
 ######################################
-# STEP 2 : Create ursho service.
+# STEP 2 : Create ursho service.     #
 ######################################
 cat <<"__EOF__" > /etc/systemd/system/ursho.service
 [Unit]
@@ -40,6 +40,9 @@ ExecStart=/bin/ursho
 WantedBy=multi-user.target
 __EOF__
 
+######################################
+# STEP 3 : Start ursho service.      #
+######################################
 systemctl daemon-reload
 systemctl enable my-ursho.service
 systemctl start ursho
